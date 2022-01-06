@@ -1,0 +1,31 @@
+import pickle
+def pickling(objects, filepath):
+    """
+    file pickling
+    Parameters
+    ------
+    object: object
+        object
+    filepath: str
+        file for pickling
+    Returns
+    ------
+    Object dumped to pickle file.
+    """
+    pickle.dump(objects, open(filepath, 'wb'))
+    return 'Object dumped to pickle file.'
+
+def unpickling(filepath):
+    """
+    file unpickling
+    Parameters
+    ------
+    filepath: str
+        file for unpickling
+    Returns
+    ------
+    object: str
+        object
+    """
+    objects = pickle.load(open(filepath, 'rb'))
+    return objects
