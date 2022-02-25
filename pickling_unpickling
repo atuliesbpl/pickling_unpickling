@@ -1,5 +1,5 @@
 import pickle
-def pickling(objects, filepath):
+def pickling(object, filepath,name):
     """
     file pickling
     Parameters
@@ -8,11 +8,14 @@ def pickling(objects, filepath):
         object
     filepath: str
         file for pickling
+    name: str
+        name of the file for pickling
     Returns
     ------
     Object dumped to pickle file.
     """
-    pickle.dump(objects, open(filepath, 'wb'))
+    filepath = os.path.join(filepath, name +'.pkl')
+    pickle.dump(object, open(filepath, 'wb'))
     return 'Object dumped to pickle file.'
 
 def unpickling(filepath):
